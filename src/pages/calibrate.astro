@@ -1,0 +1,15 @@
+---
+// src/pages/calibrate.astro
+import Layout from '../layouts/Layout.astro'
+import GammaCalculator from '../components/GammaCalculator'
+---
+
+<Layout title='Calibrate Expoente (γ)'>
+	<header class='mb-4'>
+		<h1 class='text-3xl font-bold text-blue-600 text-center'>
+			Environment Path Loss Exponent (γ) Calibration
+		</h1>
+	</header>
+
+	<GammaCalculator client:load />
+</Layout>

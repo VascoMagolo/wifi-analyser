@@ -1,22 +1,14 @@
 ---
-import Simulator from "../components/simulador.jsx";
-import "../styles/global.css";
+import Layout from '../layouts/Layout.astro'
+import SimulatorDashboard from '../components/SimulatorDashboard'
 ---
 
-<html lang="pt">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Simulador Wi-Fi Indoor</title>
-	</head>
-	<body class="min-h-screen bg-slate-100 p-4 md:p-8 text-slate-800 antialiased">
-		<main class="max-w-4xl mx-auto space-y-6">
-			<header>
-				<h1 class="text-3xl font-bold text-blue-600">Simulador de Propagação Indoor</h1>
-			</header>
-			<Simulator client:load />
+<Layout title='Simulador Wi-Fi Indoor'>
+	<header class='mb-4'>
+		<h1 class='text-3xl font-bold text-blue-600 text-center'>
+			Indoors Propagation Simulator
+		</h1>
+	</header>
 
-		</main>
-	</body>
-</html>
+	<SimulatorDashboard client:load />
+</Layout>

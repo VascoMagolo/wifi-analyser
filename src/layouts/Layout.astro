@@ -1,0 +1,37 @@
+---
+import '../styles/global.css'
+
+interface Props {
+	title: string
+}
+
+const { title } = Astro.props
+---
+
+<html lang='pt'>
+	<head>
+		<meta charset='utf-8' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='viewport' content='width=device-width' />
+		<title>{title}</title>
+	</head>
+	<body class='min-h-screen bg-slate-100 p-4 md:p-8 text-slate-800 antialiased'>
+		<main class='max-w-7xl mx-auto space-y-6'>
+			<nav
+				class='bg-white p-4 rounded-2xl shadow-sm border border-slate-200 flex gap-6 justify-center'>
+				<a
+					href='/'
+					class={`font-bold transition-colors ${Astro.url.pathname === '/' ? 'text-indigo-600 border-b-2 border-indigo-600' : 'text-slate-500 hover:text-indigo-600'}`}>
+					Simulator
+				</a>
+				<a
+					href='/calibrate'
+					class={`font-bold transition-colors ${Astro.url.pathname === '/calibrate' ? 'text-indigo-600 border-b-2 border-indigo-600' : 'text-slate-500 hover:text-indigo-600'}`}>
+					Calibrate γ
+				</a>
+			</nav>
+
+			<slot />
+		</main>
+	</body>
+</html>
